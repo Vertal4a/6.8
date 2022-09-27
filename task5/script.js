@@ -1,8 +1,14 @@
 let form = document.querySelector('form');
 let input = document.querySelector('input');
 let duplicateField = document.querySelector('#duplicateField');
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
+
+input.addEventListener('input', (event) => {
     duplicateField.textContent = input.value;
-    input.value = "";
-})
+});
+
+form.addEventListener('submit', (event) => {
+    console.log(input.value);
+    input.value = '';
+    duplicateField.textContent = '';
+});
+
